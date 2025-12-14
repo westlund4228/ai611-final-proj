@@ -57,10 +57,8 @@ This formulation allows us to test fixed values of $\lambda$ as simple baselines
 ### Approach
 
 We evaluate the following variants under identical training conditions:
-- Fixed correction strengths with $\lambda \in \lbrace0.0, 0.8, 1.0, 1.2
-brace$.
-- Adaptive scheduling using bandit-based selection (UCB and softmax) over candidate values $\lbrace0.8, 0.9, 1.0, 1.1, 1.2
-brace$, where the feedback signal is the evaluation success rate over a fixed interval.
+- Fixed correction strengths with $\lambda \in \lbrace 0.0, 0.8, 1.0, 1.2 \rbrace$.
+- Adaptive scheduling using bandit-based selection (UCB and softmax) over candidate values $\lbrace 0.8, 0.9, 1.0, 1.1, 1.2 \rbrace$, where the feedback signal is the evaluation success rate over a fixed interval.
 
 In addition to performance, we analyze the temporal behavior of the goal discrepancy
 
