@@ -1,18 +1,30 @@
 <script>
-MathJax = {
+window.MathJax = {
   tex: {
-    inlineMath: [['\\(', '\\)']],
-    displayMath: [['\\[', '\\]']]
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   }
 };
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 
-
 # Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
 
-## TEST 2025-12-14 10:24:41
-\\(a, b\\)
+## TEST 2025-12-14
+
+인라인 테스트: $a, b$ 또는 \( a, b \)
+
+디스플레이 테스트:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
+
 
 ## Introduction
 
