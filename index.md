@@ -14,18 +14,6 @@ window.MathJax = {
 
 # Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
 
-## TEST 2025-12-14
-
-인라인 테스트: $a, b$ 또는 \( a, b \)
-
-디스플레이 테스트:
-
-$$
-x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-$$
-
-
-
 ## Introduction
 
 Hierarchical Reinforcement Learning (HRL) addresses long-horizon decision-making by decomposing control into multiple temporal levels. Instead of selecting primitive actions at every step, an agent can reason over extended time scales by delegating execution to a lower-level controller. This structure is particularly effective in sparse-reward environments, where temporal abstraction and improved exploration are critical.
@@ -39,9 +27,11 @@ HIRO (Hierarchical Reinforcement Learning with Off-Policy Correction), proposed 
 To enable off-policy training at the high level, HIRO applies off-policy correction. Past high-level transitions are relabeled by replacing the original goal $g$ with a corrected goal $g'$, where $g'$ maximizes the likelihood of the observed low-level actions under the current low-level policy. This correction mitigates non-stationarity between the two levels and allows reuse of replayed experience.
 
 More concretely, HIRO selects the corrected goal
+
 $$
 g' = \arg\max_g \sum_{i=t}^{t+c-1} - \| a_i - \mu^{\text{lo}}(s_i, g_i) \|_2^2 .
 $$
+
 Intermediate goals follow the deterministic transition $g_{i+1} = h(s_i, g_i)$. In practice, HIRO evaluates a small set of candidate goals sampled near $s_{t+c} - s_t$ and selects the one with minimal action prediction error. The relabeled transition $(s_t, g')$ is then used for off-policy high-level TD updates.
 
 ## Problem Statement
@@ -53,9 +43,11 @@ Several prior works propose alternative relabeling mechanisms, such as inverse-m
 ## Main Idea
 
 We reinterpret HIRO's off-policy correction as a tunable operation rather than a binary choice. Instead of fully replacing the original goal, we define a mixed goal
+
 $$
 g_{\text{new}} = \lambda g' + (1 - \lambda) g ,
 $$
+
 where $\lambda$ controls the correction strength. Original HIRO corresponds to $\lambda = 1$.
 
 This formulation allows us to test fixed values of $\lambda$ as simple baselines and to explore adaptive strategies where $\lambda$ varies over training. Our hypothesis is that the usefulness of off-policy correction may change as learning progresses, and that non-constant $\lambda$ could potentially stabilize training or improve final performance.
@@ -65,13 +57,17 @@ This formulation allows us to test fixed values of $\lambda$ as simple baselines
 ### Approach
 
 We evaluate the following variants under identical training conditions:
-- Fixed correction strengths with $\lambda \in \{0.0, 0.8, 1.0, 1.2\}$.
-- Adaptive scheduling using bandit-based selection (UCB and softmax) over candidate values $\{0.8, 0.9, 1.0, 1.1, 1.2\}$, where the feedback signal is the evaluation success rate over a fixed interval.
+- Fixed correction strengths with $\lambda \in \lbrace0.0, 0.8, 1.0, 1.2
+brace$.
+- Adaptive scheduling using bandit-based selection (UCB and softmax) over candidate values $\lbrace0.8, 0.9, 1.0, 1.1, 1.2
+brace$, where the feedback signal is the evaluation success rate over a fixed interval.
 
 In addition to performance, we analyze the temporal behavior of the goal discrepancy
+
 $$
 \Delta g = \| g - g' \|_2 ,
 $$
+
 to examine whether it provides useful signals for adaptive correction. The goal is to determine whether any $\lambda \neq 1$ or time-varying $\lambda(t)$ yields consistent benefits.
 
 ### Experimental Setup
