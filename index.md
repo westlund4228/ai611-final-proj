@@ -1,4 +1,21 @@
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
 # Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
+
+## TEST 2025-12-14 10:24:41
+\(a, b\)
+\[
+\int_0^1 f(x) dx
+\]
 
 ## Introduction
 
