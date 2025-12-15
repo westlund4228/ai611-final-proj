@@ -14,6 +14,8 @@ window.MathJax = {
 
 # Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
 
+**Author:** Donghwa Kim
+
 ## Introduction
 
 Hierarchical Reinforcement Learning (HRL) addresses long-horizon decision-making by decomposing control into multiple temporal levels. Instead of selecting primitive actions at every step, an agent can reason over extended time scales by delegating execution to a lower-level controller. This structure is particularly effective in sparse-reward environments, where temporal abstraction and improved exploration are critical.
