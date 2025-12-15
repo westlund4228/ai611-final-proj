@@ -75,6 +75,7 @@ to examine whether it provides useful signals for adaptive correction. The goal 
 - High-level correction applied every 10 steps.
 - Training horizon: 5 million environment steps.
 - All methods evaluated using the same random seeds.
+- Code is available at https://github.com/westlund4228/ai611_final_proj_hiro.
 
 ## Results
 
