@@ -1,2 +1,4 @@
 theme: jekyll-theme-cayman
 markdown: kramdown
+author: Donghwa Kim
+title: Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
