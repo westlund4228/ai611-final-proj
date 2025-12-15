@@ -14,7 +14,7 @@ window.MathJax = {
 
 # Temporal Analysis and Adaptive Scheduling of Off-Policy Correction in HIRO
 
-**Author:** Donghwa Kim
+Final project for AI611: Deep Reinforcement Learning (Fall 2025) by **Donghwa Kim**
 
 ## Introduction
 
